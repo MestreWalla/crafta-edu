@@ -1,0 +1,107 @@
+.zona-soltar.preenchido {
+    background-color: #d4edda;
+    /* Verde claro */
+    color: #155724;
+    /* Verde escuro */
+    border-color: #28a745;
+    /* Borda verde */
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+.lista-silabas {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.silaba {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin: 5px;
+    cursor: grab;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.3),
+        inset -2px -2px 0 rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+    color: white;
+    transition: transform 200ms;
+
+    /* la textura */
+    background-image: url(/texture.png);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+.silaba:hover {
+    transform: scale(1.1);
+}
+
+.zona-soltar {
+    border: 2px dashed #aaa;
+    padding: 15px;
+    min-height: 50px;
+    min-width: 80px;
+    text-align: center;
+    background-color: #eee;
+    color: #777;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+}
+
+.zona-soltar-hover {
+    border-color: #007bff;
+    background-color: #e7f3ff;
+}
+
+.silaba[tipo="B"] {
+    background-color: #3498db;
+}
+
+.silaba[tipo="C"] {
+    background-color: #2ecc71;
+}
+
+.silaba[tipo="D"] {
+    background-color: #e74c3c;
+}
+
+.silaba[tipo="F"] {
+    background-color: #f1c40f;
+}
+
+.silaba[tipo="G"] {
+    background-color: #9b59b6;
+}
+
+.silaba[tipo="L"] {
+    background-color: #e67e22;
+}
+
+.silaba[tipo="M"] {
+    background-color: #a18479;
+}
+
+.silaba[tipo="P"] {
+    background-color: #f164a8;
+}
+
+.silaba[tipo="S"] {
+    background-color: #afb7b8;
+}
+
+.silaba[tipo="T"] {
+    background-color: #1abc9c;
+}

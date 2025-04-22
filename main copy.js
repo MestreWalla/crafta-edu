@@ -1,19 +1,41 @@
-$(function () { //jQuery p arrastar elemento
+$(function () { // jQuery p arrastar elemento
     $(".silaba").draggable({
         helper: "clone",
         revert: "invalid"
     });
 
     $(".zona-soltar").droppable({
-        accept: ".silaba",
-        hoverClass: "zona-soltar-hover",
+        accept: ".silaba", // Aceita apenas elementos com a classe .silaba
+        hoverClass: "slot-soltar-hover", // Classe para feedback visual ao passar por cima
         drop: function (event, ui) {
+            // 'ui.draggable' é o elemento original que foi arrastado (o <li> da lista)
+            let draggedSyllable = ui.draggable;
 
-            let textoDaSilaba = ui.draggable.text();
+            // '$(this)' é a zona onde o elemento foi solto (o <div> .zona-soltar)
+            let dropZone = $(this);
 
-            $(this).text(textoDaSilaba);
+            // 1. Limpa o conteúdo atual da zona de soltar
+            // Remove o texto "Solte a Sílaba X aqui" ou qualquer sílaba anterior
+            dropZone.empty();
 
-            $(this).addClass("preenchido");
+            // 2. Clona o elemento da sílaba original
+            // Isso permite que a sílaba original permaneça na lista superior
+            let syllableClone = draggedSyllable.clone();
+
+            // 3. Remove classes/estilos extras do clone que podem ter sido adicionados pelo jQuery UI durante o arraste (opcional, mas boa prática)
+            syllableClone.removeClass("ui-draggable-dragging ui-draggable");
+            // Adiciona uma classe específica se quiser estilizar a sílaba *dentro* da zona (opcional)
+            // syllableClone.addClass("silaba-na-zona");
+
+            // 4. Anexa o clone da sílaba à zona de soltar
+            dropZone.append(syllableClone);
+
+            // 5. Adiciona a classe 'preenchido' para indicar que a zona tem algo
+            // (Você pode usar isso para estilização, se necessário)
+            dropZone.addClass("preenchido");
+
+            // Opcional: Remover a classe 'text-muted' se ela estava no placeholder
+            dropZone.removeClass("text-muted");
         }
     });
 
@@ -21,33 +43,26 @@ $(function () { //jQuery p arrastar elemento
 });
 
 function montarPalavra() {
+    const possibilidades = ["BOLA", "BOLO", "CASA", "BOCA", "COPO", "DADO", "FACA", "GATO", "GOLA", "LAMA", "LATA", "LOBO", "MALA", "MAPA", "MOLA", "PATO", "SAPO", "SOPA", "TOCA", "MACA", "FALA", "BEBE", "COME", "BALA", "CABO"];
 
-    const possibilidades = ["BOLA", "BOLO", "CASA", "BOCA", "COPO", "DADO", "FACA", "GATO", "GOLA", "LAMA", "LATA", "LOBO", "MALA", "MAPA", "MOLA", "PATO", "SAPO", "SOPA", "TOCA", "MACA", "FALA", "BEBE", "COME", "BALA", "CABO"]
-
-    let caixa1 = document.getElementById("silaba1");
-    let caixa2 = document.getElementById("silaba2");
-
-    let textoNaCaixa1 = caixa1.innerText;
-    let textoNaCaixa2 = caixa2.innerText;
-
-    let textoOriginalCaixa1 = "Sílaba 1";
-    let textoOriginalCaixa2 = "Sílaba 2";
-
+    let textoNaCaixa1 = $("#silaba1").text().trim();
+    let textoNaCaixa2 = $("#silaba2").text().trim();
     let palavraMontada = "";
-    if (textoNaCaixa1 != textoOriginalCaixa1) {
+
+    if (textoNaCaixa1 !== "") {
         palavraMontada = palavraMontada + textoNaCaixa1;
     }
-    if (textoNaCaixa2 != textoOriginalCaixa2) {
+
+    if (textoNaCaixa2 !== "") {
         palavraMontada = palavraMontada + textoNaCaixa2;
     }
 
     let divResultado = document.getElementById("resultado");
 
-    if (palavraMontada == "") {
+    if (palavraMontada === "") {
         divResultado.innerHTML = "Palavra formada: (Arraste as sílabas)";
-    }
-    else if (possibilidades.includes(palavraMontada)) { //"includes" p verificar se a palavra feita ta dentro do array
-        divResultado.innerHTML = "Palavra formada: <strong>" + palavraMontada + "</strong>";
+    } else if (possibilidades.includes(palavraMontada)) {
+        divResultado.innerHTML = "<strong>" + palavraMontada + "</strong>";
     } else {
         divResultado.innerHTML = "Palavra formada: (inválida)";
     }

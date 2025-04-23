@@ -1,0 +1,81 @@
+:root {
+    --slot-size: 96px;
+    --slot-gap: 4px;
+
+    --inventory-bg: #c6c6c6;
+    --slot-bg: #8b8b8b;
+    --slot-hover-bg: #9d9d9d;
+    --inner-shadow-dark: #373737;
+    --inner-shadow-light: #ffffff;
+    --outer-border-colors: #ffffff #555555 #555555 #ffffff;
+    --outline-color: #000000;
+
+    --border-size: calc(var(--slot-size) * 3 / 36);
+    --inner-border-size: calc(var(--slot-size) * 2 / 36);
+}
+
+.inventory-container {
+    background-color: var(--inventory-bg);
+    padding: 1rem;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    border: var(--border-size) solid;
+    border-color: var(--outer-border-colors);
+    box-shadow: 0 0 0 var(--border-size) var(--outline-color);
+}
+
+.crafting-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--slot-gap) * 2);
+    margin-bottom: var(--slot-gap);
+}
+
+.crafting-grid {
+    display: grid;
+    grid-template-columns: repeat(2, var(--slot-size));
+    gap: var(--slot-gap);
+}
+
+.result-slot {
+    width: calc(var(--slot-size) * 1.5);
+    height: var(--slot-size);
+}
+
+.main-inventory {
+    display: grid;
+    grid-template-columns: repeat(9, var(--slot-size));
+
+}
+
+.slot {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    background-color: var(--slot-bg);
+    width: var(--slot-size);
+    height: var(--slot-size);
+    position: relative;
+
+    border-top: var(--inner-border-size) solid var(--inner-shadow-dark);
+    border-left: var(--inner-border-size) solid var(--inner-shadow-dark);
+    border-bottom: var(--inner-border-size) solid var(--inner-shadow-light);
+    border-right: var(--inner-border-size) solid var(--inner-shadow-light);
+}
+
+.slot:hover {
+    z-index: 1;
+    /*para nao dar problema de ficar abaixo das divs/elementos*/
+    background-color: var(--slot-hover-bg);
+}
+
+.result-slot.slot {
+    width: calc(var(--slot-size) * 1.5);
+    height: var(--slot-size);
+}

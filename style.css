@@ -8,32 +8,6 @@ body {
     min-height: 100vh;
 }
 
-.container-jogo {
-    background-image: url(/inventario.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    max-width: 680px;
-    height: 550px;
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.area-montagem {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    bottom: 376px;
-    left: 40px;
-    right: 30px;
-}
-
-.slots-montagem {
-    display: flex;
-    gap: 25px;
-}
-
 .slot-soltar {
     width: 60px;
     height: 60px;
@@ -53,27 +27,6 @@ body {
     justify-content: center;
     align-items: center;
     font-weight: bold;
-}
-
-.area-silabas {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    right: 30px;
-    background-color: transparent;
-    border: none;
-    padding: 5px;
-    z-index: 1;
-}
-
-.grade-silabas {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    row-gap: 25px;
-    margin: 0 auto;
-    padding: 10px;
-    justify-items: center;
-    align-items: center;
 }
 
 .silaba {
@@ -154,11 +107,6 @@ body {
 }
 
 .controles {
-    width: 100%;
-    max-width: 680px;
-}
-
-.caixa-resultado {
     width: 100%;
     max-width: 680px;
 }

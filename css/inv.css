@@ -1,5 +1,5 @@
 :root {
-    --slot-size: 96px;
+    --slot-size: 64px;
     --slot-gap: 4px;
 
     --inventory-bg: #c6c6c6;
@@ -15,7 +15,6 @@
 }
 
 .inventory-container {
-    margin-top: 200px;
     background-color: var(--inventory-bg);
     padding: 1rem;
     display: inline-flex;

@@ -52,20 +52,6 @@ function montarPalavra() {
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         // Atualiza o resultado
         divResultado.innerHTML = conteudoResultado;
 

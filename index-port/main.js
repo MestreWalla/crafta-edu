@@ -65,7 +65,8 @@ function montarPalavra() {
             conteudoResultado = '<img class="icone" src="/assets/icons/sapo.png" alt="sapo" title="SAPO">';
         } else if (palavraMontada === "DADO") {
             conteudoResultado = '<img class="icone" src="/assets/icons/dado.png" alt="dado" title="DADO">';
-
+        } else if (palavraMontada === "BOLO") {
+            conteudoResultado = '<img class="icone" src="/assets/icons/bolo.png" alt="bolo" title="BOLO">';
         } else {
             conteudoResultado = "<strong>" + palavraMontada + "</strong>";
         }

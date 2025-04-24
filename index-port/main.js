@@ -21,7 +21,7 @@ $(function () {
     $(".silaba, .zona-soltar").disableSelection();
 });
 
-// Variável para controlar a próxima posição disponível no dicionário
+// variável para controlar a próxima posição disponível no dicionário
 let proximaPosicaoDicionario = 1;
 
 function montarPalavra() {
@@ -79,7 +79,7 @@ function montarPalavra() {
             adicionarAoDicionario(conteudoResultado);
         }, 500);
     } else {
-        divResultado.innerHTML = "(inválida)";
+        divResultado.innerHTML = "❌";
     }
 }
 function adicionarAoDicionario(conteudo) {
@@ -106,7 +106,7 @@ function adicionarAoDicionario(conteudo) {
 }
 
 function limparAreaMontagem() {
-    // Simplesmente remove as sílabas da área de montagem
+    // Remove totalmente as sílabas da área de montagem
     $("#silaba1, #silaba2").empty();
 
     // Limpa o resultado

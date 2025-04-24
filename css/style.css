@@ -8,7 +8,7 @@ body {
     min-height: 100vh;
 }
 
-.slot-soltar {
+/*.slot-soltar {
     width: 60px;
     height: 60px;
     box-sizing: border-box;
@@ -16,18 +16,7 @@ body {
     justify-content: center;
     align-items: center;
     font-weight: bold;
-}
-
-#resultado {
-    margin-left: 80px;
-    width: 160px;
-    height: 60px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-}
+}*/
 
 .silaba {
     display: flex;
@@ -44,7 +33,7 @@ body {
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
     color: white;
     transition: transform 200ms;
-    background-image: url(/texture.png);
+    background-image: url(/assets/imagens/texture.png);
     background-size: cover;
     background-blend-mode: multiply;
 }
@@ -109,4 +98,32 @@ body {
 .controles {
     width: 100%;
     max-width: 680px;
+}
+
+.seta {
+    margin-right: 30px;
+    margin-left: 30px;
+    height: 70px;
+}
+
+/*=========================================================================================================*/
+
+.icone {
+    height: 50px;
+}
+
+
+/* Estilo para os itens no dicionário */
+.palavra-dicionario {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.palavra-dicionario:hover {
+    box-shadow: 0 0 20px 10px rgb(255, 255, 255);
 }

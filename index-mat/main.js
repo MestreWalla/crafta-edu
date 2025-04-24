@@ -1,13 +1,13 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // Make numbers and operators draggable
     $('.numero, .operador').draggable({
         helper: 'clone',
         revert: 'invalid',
         zIndex: 100,
-        start: function() {
+        start: function () {
             $(this).css('opacity', '0.7');
         },
-        stop: function() {
+        stop: function () {
             $(this).css('opacity', '1');
         }
     });
@@ -17,11 +17,11 @@ $(document).ready(function() {
         accept: '.numero',
         hoverClass: 'ui-droppable-hover',
         tolerance: 'pointer',
-        drop: function(event, ui) {
+        drop: function (event, ui) {
             $(this).empty()
-                   .addClass('preenchido')
-                   .append(ui.draggable.clone().removeClass('ui-draggable-dragging'))
-                   .data('valor', ui.draggable.text());
+                .addClass('preenchido')
+                .append(ui.draggable.clone().removeClass('ui-draggable-dragging'))
+                .data('valor', ui.draggable.text());
         }
     });
 
@@ -30,22 +30,22 @@ $(document).ready(function() {
         accept: '.operador',
         hoverClass: 'ui-droppable-hover',
         tolerance: 'pointer',
-        drop: function(event, ui) {
+        drop: function (event, ui) {
             $(this).empty()
-                   .addClass('preenchido')
-                   .append(ui.draggable.clone().removeClass('ui-draggable-dragging'))
-                   .data('valor', ui.draggable.text());
+                .addClass('preenchido')
+                .append(ui.draggable.clone().removeClass('ui-draggable-dragging'))
+                .data('valor', ui.draggable.text());
         }
     });
 
     // Clear drop zones when clicking on them
-    $('.zona-soltar').click(function() {
+    $('.zona-soltar').click(function () {
         if ($(this).hasClass('preenchido')) {
             $(this).removeClass('preenchido')
-                   .text($(this).attr('id') === 'numero1' ? 'Solte o Número 1 aqui' : 
-                         $(this).attr('id') === 'operador' ? 'Solte o Operador aqui' : 
-                         'Solte o Número 2 aqui')
-                   .removeData('valor');
+                .text($(this).attr('id') === 'numero1' ? 'Solte o Número 1 aqui' :
+                    $(this).attr('id') === 'operador' ? 'Solte o Operador aqui' :
+                        'Solte o Número 2 aqui')
+                .removeData('valor');
         }
     });
 
@@ -114,12 +114,12 @@ function calcular() {
 // Additional helper function to reset the calculator
 function resetCalculator() {
     $('.zona-soltar').removeClass('preenchido')
-                     .text(function() {
-                         const id = $(this).attr('id');
-                         return id === 'numero1' ? 'Solte o Número 1 aqui' : 
-                                id === 'operador' ? 'Solte o Operador aqui' : 
-                                'Solte o Número 2 aqui';
-                     })
-                     .removeData('valor');
+        .text(function () {
+            const id = $(this).attr('id');
+            return id === 'numero1' ? 'Solte o Número 1 aqui' :
+                id === 'operador' ? 'Solte o Operador aqui' :
+                    'Solte o Número 2 aqui';
+        })
+        .removeData('valor');
     $('#resultado').text('...');
 }

@@ -20,7 +20,7 @@
     display: inline-flex;
     flex-direction: column;
     gap: 1rem;
-
+    margin-top: 50px;
     border: var(--border-size) solid;
     border-color: var(--outer-border-colors);
     box-shadow: 0 0 0 var(--border-size) var(--outline-color);

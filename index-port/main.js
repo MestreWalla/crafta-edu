@@ -67,10 +67,12 @@ function montarPalavra() {
             conteudoResultado = '<img class="icone" src="/assets/icons/dado.png" alt="dado" title="DADO">';
         } else if (palavraMontada === "BOLO") {
             conteudoResultado = '<img class="icone" src="/assets/icons/bolo.png" alt="bolo" title="BOLO">';
-        } else {
+        } else if (palavraMontada === "PATO") {
+            conteudoResultado = '<img class="icone" src="/assets/icons/pato.png" alt="pato" title="pato">';
+        }
+        else {
             conteudoResultado = "<strong>" + palavraMontada + "</strong>";
         }
-
 
         // Atualiza o resultado
         divResultado.innerHTML = conteudoResultado;

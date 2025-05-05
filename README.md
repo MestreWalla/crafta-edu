@@ -90,7 +90,6 @@ cd crafta
   </tr>
 </table>
 
-
 ## 🔗 Links
 
 - [Repositório no GitHub](https://github.com/vinisebold/crafta)

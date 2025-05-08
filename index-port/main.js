@@ -44,33 +44,33 @@ function montarPalavra() {
         // Define o conteúdo do resultado
         let conteudoResultado = "";
         if (palavraMontada === "BOCA") {
-            conteudoResultado = '<img class="icone" src="/assets/icons/boca.png" alt="boca" title="BOCA">';
+            conteudoResultado = '<img class="icone" src="../assets/icons/boca.png" alt="boca" title="BOCA">';
         } else if (palavraMontada === "BOLA") {
-            conteudoResultado = '<img class="icone" src="/assets/icons/bola.png" alt="bola" title="BOLA">';
+            conteudoResultado = '<img class="icone" src="../assets/icons/bola.png" alt="bola" title="BOLA">';
         } else if (palavraMontada === "COPO") {
-            conteudoResultado = '<img class="icone" src="/assets/icons/copo.png" alt="copo" title="COPO">';
+            conteudoResultado = '<img class="icone" src="../assets/icons/copo.png" alt="copo" title="COPO">';
         } else if (palavraMontada === "FACA") {
-            conteudoResultado = '<img class="icone" src="/assets/icons/faca.png" alt="faca" title="FACA">';
+            conteudoResultado = '<img class="icone" src="../assets/icons/faca.png" alt="faca" title="FACA">';
         } else if (palavraMontada === "GATO") {
-            conteudoResultado = '<img class="icone" src="/assets/icons/gato.png" alt="gato" title="GATO">';
+            conteudoResultado = '<img class="icone" src="../assets/icons/gato.png" alt="gato" title="GATO">';
         } else if (palavraMontada === "CABO") {
-            conteudoResultado = '<img class="icone" src="/assets/icons/cabo.png" alt="cabo" title="CABO">';
+            conteudoResultado = '<img class="icone" src="../assets/icons/cabo.png" alt="cabo" title="CABO">';
         } else if (palavraMontada === "BALA") {
-            conteudoResultado = '<img class="icone" src="/assets/icons/bala.png" alt="bala" title="BALA">';
+            conteudoResultado = '<img class="icone" src="../assets/icons/bala.png" alt="bala" title="BALA">';
         } else if (palavraMontada === "MAPA") {
-            conteudoResultado = '<img class="icone" src="/assets/icons/mapa.png" alt="mapa" title="MAPA">';
+            conteudoResultado = '<img class="icone" src="../assets/icons/mapa.png" alt="mapa" title="MAPA">';
         } else if (palavraMontada === "MOLA") {
-            conteudoResultado = '<img class="icone" src="/assets/icons/mola.png" alt="mola" title="MOLA">';
+            conteudoResultado = '<img class="icone" src="../assets/icons/mola.png" alt="mola" title="MOLA">';
         } else if (palavraMontada === "SAPO") {
-            conteudoResultado = '<img class="icone" src="/assets/icons/sapo.png" alt="sapo" title="SAPO">';
+            conteudoResultado = '<img class="icone" src="../assets/icons/sapo.png" alt="sapo" title="SAPO">';
         } else if (palavraMontada === "DADO") {
-            conteudoResultado = '<img class="icone" src="/assets/icons/dado.png" alt="dado" title="DADO">';
+            conteudoResultado = '<img class="icone" src="../assets/icons/dado.png" alt="dado" title="DADO">';
         } else if (palavraMontada === "BOLO") {
-            conteudoResultado = '<img class="icone" src="/assets/icons/bolo.png" alt="bolo" title="BOLO">';
+            conteudoResultado = '<img class="icone" src="../assets/icons/bolo.png" alt="bolo" title="BOLO">';
         } else if (palavraMontada === "PATO") {
-            conteudoResultado = '<img class="icone" src="/assets/icons/pato.png" alt="pato" title="pato">';
+            conteudoResultado = '<img class="icone" src="../assets/icons/pato.png" alt="pato" title="pato">';
         } else if (palavraMontada === "LAMA") {
-            conteudoResultado = '<img class="icone" src="/assets/icons/lama.png" alt="lama" title="lama">';
+            conteudoResultado = '<img class="icone" src="../assets/icons/lama.png" alt="lama" title="lama">';
         }
         else {
             conteudoResultado = "<strong>" + palavraMontada + "</strong>";

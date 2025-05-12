@@ -23,7 +23,7 @@ body {
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
     color: white;
     transition: transform 200ms;
-    background-image: url(../assets/imagens/texture.png);
+    background-image: url(../assets/images/texture.png);
     background-size: cover;
     background-blend-mode: multiply;
 }

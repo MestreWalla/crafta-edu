@@ -78,3 +78,20 @@
     width: calc(var(--slot-size) * 1.5);
     height: var(--slot-size);
 }
+
+@media (max-width: 700px) {
+
+.inventory-container {
+    margin-top: 150px;
+}
+
+:root {
+    --slot-size: 64px;
+    --slot-gap: 4px;
+}
+
+.main-inventory {
+    grid-template-columns: repeat(6, var(--slot-size));
+}
+
+}

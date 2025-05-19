@@ -1,21 +1,55 @@
 $(() => {
-    $(".silaba")
-        .draggable({
-            revert: "invalid",
-        });
+    const $silabas = $(".silaba");
+    const $zonasSoltar = $(".zona-soltar");
 
-    $(".zona-soltar")
-        .droppable({
+    function configurarDraggable() {
+        $silabas.draggable({
+            revert: "invalid",
+            helper: "clone",
+            opacity: 0.7,
+            start: onDragStart,
+            stop: onDragStop
+        });
+    }
+
+    function onDragStart(event, ui) {
+        const $this = $(this);
+        $this.data("originalPosition", $this.position()).hide();
+    }
+
+    function onDragStop(event, ui) {
+        const $this = $(this);
+        if (!$this.data("dropped")) {
+            $this.show();
+        }
+        $this.data("dropped", false);
+    }
+
+    function configurarDroppable() {
+        $zonasSoltar.droppable({
             accept: ".silaba",
             hoverClass: "slot-soltar-hover",
             tolerance: "pointer",
-            drop(event, ui) {
-                const $item = ui.draggable
-                    .detach()
-                    .css({ top: "", left: "", position: "" });
-                $(this).empty().append($item);
-            }
+            drop: onDrop
         });
+    }
+
+    function onDrop(event, ui) {
+        const $item = ui.draggable;
+        $item.data("dropped", true);
+
+        $item.detach().css({
+            top: "",
+            left: "",
+            position: "",
+            display: "flex"
+        });
+
+        $(this).empty().append($item);
+    }
+
+    configurarDraggable();
+    configurarDroppable();
 });
 
 

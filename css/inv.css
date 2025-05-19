@@ -77,32 +77,37 @@
     height: var(--slot-size);
 }
 
-@media (max-width: 700px) {
-
-    .inventory-container {
-        margin-top: 100px;
-    }
-
-    :root {
-        --slot-size: 64px;
-        --slot-gap: 4px;
-    }
-
-    .main-inventory {
-        grid-template-columns: repeat(6, var(--slot-size));
-    }
-
-}
-
-@media (max-width: 480px) {
-
-    :root {
-        --slot-size: 52px;
-        --slot-gap: 4px;
-    }
-
-}
-
 .ui-draggable-dragging {
     z-index: 1;
+}
+
+/*Tablet or Desktop Screen*/
+@media (max-width: 700px), (max-height: 730px) {
+  :root {
+    --slot-size: 64px;
+    --slot-gap: 4px;
   }
+  
+  .inventory-container {
+    margin-top: 100px;
+  }
+  
+  .main-inventory {
+    grid-template-columns: repeat(6, var(--slot-size));
+  }
+}
+
+/*Shorter Screen*/
+@media (max-height: 820px) {
+  .inventory-container {
+    margin-top: 0px;
+  }
+}
+
+/*Mobile Device*/
+@media (max-width: 480px), (max-height: 700px) {
+  :root {
+    --slot-size: 52px;
+    --slot-gap: 4px;
+  }
+}

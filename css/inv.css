@@ -69,8 +69,6 @@
 }
 
 .slot:hover {
-    z-index: 1;
-    /*para nao dar problema de ficar abaixo das divs/elementos*/
     background-color: var(--slot-hover-bg);
 }
 
@@ -104,3 +102,7 @@
     }
 
 }
+
+.ui-draggable-dragging {
+    z-index: 1;
+  }

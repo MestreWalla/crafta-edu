@@ -26,6 +26,7 @@ body {
     background-image: url(../assets/images/texture.png);
     background-size: cover;
     background-blend-mode: multiply;
+    user-select: none;
 }
 
 .silaba:hover {
@@ -94,12 +95,14 @@ body {
     margin-right: 30px;
     margin-left: 30px;
     height: 46px;
+    user-select: none;
 }
 
 /*=========================================================================================================*/
 
 .icone {
     height: 50px;
+    user-select: none;
 }
 
 

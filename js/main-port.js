@@ -1,25 +1,23 @@
-$(function () {
-    $(".silaba").draggable({
-        revert: "invalid"
-    });
-    $(".zona-soltar").droppable({
-        accept: ".silaba",
-        hoverClass: "slot-soltar-hover",
-        drop: function (event, ui) {
-            let dragged = ui.draggable;      // o próprio <li> arrastado
-            let dropZone = $(this);
-            // 1. Limpa a zona
-            dropZone.empty();
-            // 2. Desanexa o elemento da lista original
-            dragged.detach()
-                // 3. Remove estilos de posicionamento in-line
-                .css({ top: "", left: "", position: "" })
-                // 4. Anexa dentro da zona de soltar
-                .appendTo(dropZone)
-        }
-    });
-    $(".silaba, .zona-soltar").disableSelection();
+$(() => { // forma mais curta de escrever funcao (Arrow Function)
+  const $silabas = $(".silaba") // cria constante $silaba ($ mostra que e jQuery) onde pega todos elementos com classe .silaba
+    .draggable({ revert: "invalid" }) // volta caso soltar em zona nao permitida
+    .disableSelection(); // impede que o texto seja seleciona !Revisar!
+
+  $(".zona-soltar") // pega elementos que tem classe .zona-soltar
+    .droppable({ // plugin "droppale()" nativo do jQuery UI (pacote complementar do jQuery)
+      accept: ".silaba", // aceita arrastar apenas elementos com classe .silaba
+      hoverClass: "slot-soltar-hover", // quando hover em cima da zona permitida sera adiciona classe slot-soltar-hover
+      drop(event, ui) { // event= evento do navegador; ui= objeto que contem referencias ao elementos que esta sendo arrastado
+        const $dragged = ui.draggable // guarda em uma constante o elemento que foi arrastado, o 'ui' que auxilia nisso (ja que ele contem info do elemento arrastado)
+          .detach() // remove elemento do html (parte visivel), porem guarda ele na memoria. Ele remove do lugar original com tudo 100%, sem perder nada
+          .css({ top: "", left: "", position: "" }); // zera estilos que o jQuery colocou automaticamente (evita problemas apos soltar)
+
+        $(this).empty().append($dragged); // remove e anexa o item na zona de soltar
+      },
+    })
+    .disableSelection(); // impede que o texto seja seleciona !Revisar!
 });
+
 
 // variável para controlar a próxima posição disponível no dicionário
 let proximaPosicaoDicionario = 1;

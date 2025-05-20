@@ -29,8 +29,56 @@ body {
     user-select: none;
 }
 
+.animation-wooble {
+  animation: wooble 0.8s cubic-bezier(.36,.07,.19,.97) both;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes wooble {
+  0%, 100% {
+    transform: translateX(0%);
+  }
+  15% {
+    transform: translateX(-20%) rotate(-4deg);
+  }
+  30% {
+    transform: translateX(15%) rotate(2deg);
+  }
+  45% {
+    transform: translateX(-10%) rotate(-2deg);
+  }
+  60% {
+    transform: translateX(5%) rotate(1deg);
+  }
+}
+
+.animation-gelatine {
+  animation: gelatine 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes gelatine {
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+  20% {
+    transform: scale(0.9, 1.1);
+  }
+  40% {
+    transform: scale(1.12, 0.9);
+  }
+  60% {
+    transform: scale(0.95, 1.05);
+  }
+  80% {
+    transform: scale(1.02, 0.98);
+  }
+}
+
 .silaba:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .silaba[tipo="B"] {

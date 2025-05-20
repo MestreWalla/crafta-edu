@@ -1,4 +1,4 @@
-$(() => {
+(() => {
     const $zonasSoltar = $(".zona-soltar");
     const $slots = $(".slot");
     const SILABA_SELECTOR = ".silaba";
@@ -12,25 +12,53 @@ $(() => {
 
     function onDragStart(event, ui) {
         const $this = $(this);
-        $this.data("originalParent", $this.parent());
-        $this.hide(); // Hide the silaba original para apenas mostrar o helper:clone
+        const $helper = ui.helper;
 
+        $this.data("originalParent", $this.parent());
+        $this.data("dragStartX", event.pageX);
+        $this.data("dragStartY", event.pageY);
+        $this.data("animationPlayed", false); // Evita múltiplas animações
+        $this.hide(); // Esconde o original
     }
 
     function onDragStop(event, ui) {
         const $this = $(this);
         if (!$this.data("dropped")) {
-            $this.show(); // Show original denovo se ela não foi dropped
+            $this.show(); // Mostra de novo se não foi dropado
         }
         $this.data("dropped", false);
+
+        // Aplica animação final (gelatina por padrão)
+        reanimar($this, 'animation-gelatine');
     }
 
     function configurarDraggable() {
         $(SILABA_SELECTOR).draggable({
             helper: "clone",
             revert: "invalid",
-            opacity: 0.7,
+            opacity: 1,
             start: onDragStart,
+            drag: function (event, ui) {
+                const $this = $(this);
+                if ($this.data("animationPlayed")) return;
+
+                const startX = $this.data("dragStartX");
+                const startY = $this.data("dragStartY");
+                const deltaX = event.pageX - startX;
+                const deltaY = event.pageY - startY;
+
+                if (Math.abs(deltaX) >= 10 || Math.abs(deltaY) >= 10) {
+                    $this.data("animationPlayed", true);
+
+                    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                        // Movimento lateral
+                        reanimar(ui.helper, 'animation-wooble');
+                    } else {
+                        // Movimento vertical
+                        reanimar(ui.helper, 'animation-gelatine');
+                    }
+                }
+            },
             stop: onDragStop
         });
     }
@@ -41,16 +69,17 @@ $(() => {
         const $slotOrigem = $draggedSilaba.data("originalParent");
 
         $draggedSilaba.data("dropped", true);
-        // Se no destino ja estiver uma silaba retorna para posicao original antes de adicionar uma nova silaba
+
         const $existingSilaba = $slotDestino.find(SILABA_SELECTOR);
         if ($existingSilaba.length > 0) {
             $existingSilaba.detach().css(DEFAULT_SILABA_STYLE);
+            reanimar($existingSilaba, 'animation-gelatine');
             $slotOrigem.append($existingSilaba);
         }
 
         $draggedSilaba.detach().css(DEFAULT_SILABA_STYLE);
         $slotDestino.append($draggedSilaba);
-        $draggedSilaba.show(); // Para a original ficar visivel
+        $draggedSilaba.show(); // Mostra original
     }
 
     function configurarDroppable() {
@@ -62,9 +91,19 @@ $(() => {
         });
     }
 
+    // Reaplica classe de animação forçando reflow
+    function reanimar($el, classe) {
+        $el.removeClass(classe);
+        void $el[0].offsetWidth;
+        $el.addClass(classe);
+        $el.one('animationend', function () {
+            $el.removeClass(classe);
+        });
+    }
+
     configurarDraggable();
     configurarDroppable();
-});
+})();
 
 
 // variável para controlar a próxima posição disponível no dicionário

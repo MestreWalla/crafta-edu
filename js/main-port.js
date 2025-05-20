@@ -1,51 +1,65 @@
 $(() => {
-    const $silabas = $(".silaba");
     const $zonasSoltar = $(".zona-soltar");
+    const $slots = $(".slot");
+    const SILABA_SELECTOR = ".silaba";
+
+    const DEFAULT_SILABA_STYLE = {
+        top: "",
+        left: "",
+        position: "",
+        display: "flex"
+    };
+
+    function onDragStart(event, ui) {
+        const $this = $(this);
+        $this.data("originalParent", $this.parent());
+        $this.hide(); // Hide the silaba original para apenas mostrar o helper:clone
+
+    }
+
+    function onDragStop(event, ui) {
+        const $this = $(this);
+        if (!$this.data("dropped")) {
+            $this.show(); // Show original denovo se ela não foi dropped
+        }
+        $this.data("dropped", false);
+    }
 
     function configurarDraggable() {
-        $silabas.draggable({
-            revert: "invalid",
+        $(SILABA_SELECTOR).draggable({
             helper: "clone",
+            revert: "invalid",
             opacity: 0.7,
             start: onDragStart,
             stop: onDragStop
         });
     }
 
-    function onDragStart(event, ui) {
-        const $this = $(this);
-        $this.data("originalPosition", $this.position()).hide();
-    }
+    function handleDrop(event, ui) {
+        const $draggedSilaba = ui.draggable;
+        const $slotDestino = $(this);
+        const $slotOrigem = $draggedSilaba.data("originalParent");
 
-    function onDragStop(event, ui) {
-        const $this = $(this);
-        if (!$this.data("dropped")) {
-            $this.show();
+        $draggedSilaba.data("dropped", true);
+        // Se no destino ja estiver uma silaba retorna para posicao original antes de adicionar uma nova silaba
+        const $existingSilaba = $slotDestino.find(SILABA_SELECTOR);
+        if ($existingSilaba.length > 0) {
+            $existingSilaba.detach().css(DEFAULT_SILABA_STYLE);
+            $slotOrigem.append($existingSilaba);
         }
-        $this.data("dropped", false);
+
+        $draggedSilaba.detach().css(DEFAULT_SILABA_STYLE);
+        $slotDestino.append($draggedSilaba);
+        $draggedSilaba.show(); // Para a original ficar visivel
     }
 
     function configurarDroppable() {
-        $zonasSoltar.droppable({
-            accept: ".silaba",
+        $zonasSoltar.add($slots).droppable({
+            accept: SILABA_SELECTOR,
             hoverClass: "slot-soltar-hover",
             tolerance: "pointer",
-            drop: onDrop
+            drop: handleDrop
         });
-    }
-
-    function onDrop(event, ui) {
-        const $item = ui.draggable;
-        $item.data("dropped", true);
-
-        $item.detach().css({
-            top: "",
-            left: "",
-            position: "",
-            display: "flex"
-        });
-
-        $(this).empty().append($item);
     }
 
     configurarDraggable();

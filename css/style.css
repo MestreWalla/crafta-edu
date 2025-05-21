@@ -30,8 +30,8 @@ body {
 }
 
 
-.silaba:hover {
-    transform: scale(1.05);
+.silaba:active {
+    animation: jelly 960ms linear both;
 }
 
 .silaba[tipo="B"] {

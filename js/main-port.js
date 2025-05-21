@@ -12,7 +12,6 @@
 
     function onDragStart(event, ui) {
         const $this = $(this);
-
         $this.data("originalParent", $this.parent());
         $this.data("animationPlayed", false);
         $this.hide();
@@ -24,7 +23,6 @@
             $this.show();
         }
         $this.data("dropped", false);
-        reanimar($this, 'jelly');
     }
 
     function configurarDraggable() {
@@ -35,9 +33,12 @@
             start: onDragStart,
             drag: function (event, ui) {
                 const $this = $(this);
+                const $clone = ui.helper;
+
                 if ($this.data("animationPlayed")) return;
                 $this.data("animationPlayed", true);
-                reanimar(ui.helper, 'animation-gelatine');
+
+                reanimar(ui.helper, 'jelly');
             },
             stop: onDragStop
         });
@@ -53,13 +54,15 @@
         const $existingSilaba = $slotDestino.find(SILABA_SELECTOR);
         if ($existingSilaba.length > 0) {
             $existingSilaba.detach().css(DEFAULT_SILABA_STYLE);
-            reanimar($existingSilaba, 'animation-gelatine');
+            reanimar($existingSilaba, 'jelly-reverse');
             $slotOrigem.append($existingSilaba);
         }
 
         $draggedSilaba.detach().css(DEFAULT_SILABA_STYLE);
         $slotDestino.append($draggedSilaba);
         $draggedSilaba.show();
+
+        reanimar($draggedSilaba, 'jelly-reverse');
     }
 
     function configurarDroppable() {
@@ -72,12 +75,9 @@
     }
 
     function reanimar($el, classe) {
-        $el.removeClass(classe);
+        $el.removeClass("jelly jelly-reverse");
         void $el[0].offsetWidth;
         $el.addClass(classe);
-        $el.one('animationend', function () {
-            $el.removeClass(classe);
-        });
     }
 
     configurarDraggable();

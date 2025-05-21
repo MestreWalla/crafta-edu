@@ -52,7 +52,7 @@
 
                     if (Math.abs(deltaX) > Math.abs(deltaY)) {
                         // Movimento lateral
-                        reanimar(ui.helper, 'animation-wooble');
+                        reanimar(ui.helper, 'animation-gelatine');
                     } else {
                         // Movimento vertical
                         reanimar(ui.helper, 'animation-gelatine');

@@ -12,24 +12,19 @@
 
     function onDragStart(event, ui) {
         const $this = $(this);
-        const $helper = ui.helper;
 
         $this.data("originalParent", $this.parent());
-        $this.data("dragStartX", event.pageX);
-        $this.data("dragStartY", event.pageY);
-        $this.data("animationPlayed", false); // Evita múltiplas animações
-        $this.hide(); // Esconde o original
+        $this.data("animationPlayed", false);
+        $this.hide();
     }
 
     function onDragStop(event, ui) {
         const $this = $(this);
         if (!$this.data("dropped")) {
-            $this.show(); // Mostra de novo se não foi dropado
+            $this.show();
         }
         $this.data("dropped", false);
-
-        // Aplica animação final (gelatina por padrão)
-        reanimar($this, 'animation-gelatine');
+        reanimar($this, 'jelly');
     }
 
     function configurarDraggable() {
@@ -41,23 +36,8 @@
             drag: function (event, ui) {
                 const $this = $(this);
                 if ($this.data("animationPlayed")) return;
-
-                const startX = $this.data("dragStartX");
-                const startY = $this.data("dragStartY");
-                const deltaX = event.pageX - startX;
-                const deltaY = event.pageY - startY;
-
-                if (Math.abs(deltaX) >= 10 || Math.abs(deltaY) >= 10) {
-                    $this.data("animationPlayed", true);
-
-                    if (Math.abs(deltaX) > Math.abs(deltaY)) {
-                        // Movimento lateral
-                        reanimar(ui.helper, 'animation-gelatine');
-                    } else {
-                        // Movimento vertical
-                        reanimar(ui.helper, 'animation-gelatine');
-                    }
-                }
+                $this.data("animationPlayed", true);
+                reanimar(ui.helper, 'animation-gelatine');
             },
             stop: onDragStop
         });
@@ -79,7 +59,7 @@
 
         $draggedSilaba.detach().css(DEFAULT_SILABA_STYLE);
         $slotDestino.append($draggedSilaba);
-        $draggedSilaba.show(); // Mostra original
+        $draggedSilaba.show();
     }
 
     function configurarDroppable() {
@@ -91,7 +71,6 @@
         });
     }
 
-    // Reaplica classe de animação forçando reflow
     function reanimar($el, classe) {
         $el.removeClass(classe);
         void $el[0].offsetWidth;

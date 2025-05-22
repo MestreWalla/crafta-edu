@@ -52,44 +52,6 @@ Utiliza blocos que representam números e operadores matemáticos (`+`, `-`, `*`
 - **jQuery**: Implementação do sistema de arrastar e soltar
 - **Bootstrap**: Responsividade e outros componentes
 
-## 🚀 Como Executar
-
-1. Clone este repositório:
-```bash
-git clone https://github.com/vinisebold/crafta.git
-```
-
-2. Navegue até o diretório do projeto:
-```bash
-cd crafta
-```
-
-3. Abra o arquivo `index.html` em seu navegador preferido.
-
-
-## 👨‍💻 Desenvolvedores
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/vinisebold">
-        <img src="https://github.com/vinisebold.png" width="100px" alt="Avatar"/><br>
-        <sub><b>Vinicius Sebold</b></sub>
-      </a>
-      <br>
-      <sub>CSS, jQuery, UI, Vídeos, Tela de Loading</sub>
-    </td>
-    <td align="center">
-      <a href="https://github.com/V1niciusGomes">
-        <img src="https://github.com/V1niciusGomes.png" width="100px" alt="Avatar"/><br>
-        <sub><b>Vinícius Gomes</b></sub>
-      </a>
-      <br>
-      <sub>Modo Matemática</sub>
-    </td>
-  </tr>
-</table>
-
 ## 🔗 Links
 
 - [Repositório no GitHub](https://github.com/vinisebold/crafta)
@@ -98,5 +60,5 @@ cd crafta
 ---
 
 <p align="center">
-  Feito com ❤️ para tornar o aprendizado mais divertido!
+  Feito com ❤️ para uma melhor aprendizado!
 </p>

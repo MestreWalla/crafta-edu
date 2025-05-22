@@ -21,16 +21,10 @@ body {
     box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.3), inset -2px -2px 0 rgba(0, 0, 0, 0.3);
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
     color: white;
-    transition: transform 200ms;
-    background-image: url(../assets/images/texture.png);
+    background-image: url(../../assets/images/texture.png);
     background-size: cover;
     background-blend-mode: multiply;
     user-select: none;
-}
-
-
-.silaba:active {
-    animation: jelly 960ms linear both;
 }
 
 .silaba[tipo="B"] {
@@ -120,12 +114,11 @@ body {
 .palavra-dicionario:hover {
     box-shadow: 0 0 20px 10px rgb(255, 255, 255);
 }
-
 /*=========================================================================================================*/
 
 .experimental {
-    color: #211d1cc3;
-    background-color: #ffffff62;
+    color: #f0f0f0ce;
+    background-color: #fff42c4c;
     backdrop-filter: blur(6px);
     text-align: center;
     width: 100%;
@@ -134,5 +127,5 @@ body {
 }
 
 a{
-    color: #0046c9d4;
+    color: #ffe100bc;
 }

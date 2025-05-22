@@ -153,7 +153,7 @@ function handleDrop(draggableInstance, dropZone) {
                 existingSyllableState.isFromSlot = draggedElState.isFromSlot;
 
                 gsap.fromTo(existingSyllableInZone,
-                    { scale: 1.1, rotation: 2 },
+                    { scale: 1.1, rotation: 1 },
                     { scale: 1, rotation: 0, duration: 0.5, ease: 'elastic.out(1, 0.7)' }
                 );
             }
@@ -220,6 +220,12 @@ function initDragDrop() {
         console.warn('Nenhuma zona de soltar encontrada com os seletores:', DROP_ZONE_SELECTORS);
     }
 
+    document.querySelectorAll(SILABA_SELECTOR).forEach(el => {
+        if (!draggableStates.has(el)) {
+            prepareDragState({ target: el });
+        }
+    });
+
     Draggable.create(SILABA_SELECTOR, {
         type: 'x,y',
         appendTo: document.body,
@@ -248,7 +254,7 @@ function initDragDrop() {
             let droppedInZone = null;
 
             for (const zone of dropZones) {
-                if (Draggable.hitTest(el, zone, '50%')) {
+                if (Draggable.hitTest(el, zone, '20%')) {
                     droppedInZone = zone;
                     break;
                 }

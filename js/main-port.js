@@ -1,4 +1,4 @@
-(() => {
+function initializeDragDrop() {
     const $zonasSoltar = $(".zona-soltar");
     const $slots = $(".slot");
     const SILABA_SELECTOR = ".silaba";
@@ -45,6 +45,7 @@
     }
 
     function handleDrop(event, ui) {
+        console.log("DROP!");
         const $draggedSilaba = ui.draggable;
         const $slotDestino = $(this);
         const $slotOrigem = $draggedSilaba.data("originalParent");
@@ -82,17 +83,17 @@
 
     configurarDraggable();
     configurarDroppable();
-})();
-
+};
 
 // variável para controlar a próxima posição disponível no dicionário
 let proximaPosicaoDicionario = 1;
 
 function montarPalavra() {
-    const possibilidades = ["BOLA", "BOLO", "CASA", "BOCA", "COPO", "DADO", "FACA", "GATO", "GOLA", "LAMA", "LATA", "LOBO", "MALA", "MAPA", "MOLA", "PATO", "SAPO", "SOPA", "TOCA", "MACA", "FALA", "BEBE", "COME", "BALA", "CABO"];
+    const possibilidades = ["BABEBO", "BOLO", "CASA", "BOCA", "COPO", "DADO", "FACA", "GATO", "GOLA", "LAMA", "LATA", "LOBO", "MALA", "MAPA", "MOLA", "PATO", "SAPO", "SOPA", "TOCA", "MACA", "FALA", "BEBE", "COME", "BALA", "CABO"];
 
     let textoNaCaixa1 = $("#silaba1").text();
     let textoNaCaixa2 = $("#silaba2").text();
+    let textoNaCaixa3 = $('#silaba3').text();
     let palavraMontada = "";
 
     if (textoNaCaixa1 !== "") {
@@ -100,6 +101,9 @@ function montarPalavra() {
     }
     if (textoNaCaixa2 !== "") {
         palavraMontada = palavraMontada + textoNaCaixa2;
+    }
+    if (textoNaCaixa3 !== "") {
+        palavraMontada = palavraMontada + textoNaCaixa3;
     }
     let divResultado = document.getElementById("resultado");
     if (palavraMontada === "") {
@@ -130,7 +134,7 @@ function montarPalavra() {
         } else if (palavraMontada === "DADO") {
             conteudoResultado = '<img class="icone" src="../../assets/icons/dado.png" alt="dado" title="DADO">';
         } else if (palavraMontada === "BOLO") {
-            conteudoResultado = '<img class="icone" src="../assets/icons/bolo.png" alt="bolo" title="BOLO">';
+            conteudoResultado = '<img class="icone" src="../../assets/icons/bolo.png" alt="bolo" title="BOLO">';
         } else if (palavraMontada === "PATO") {
             conteudoResultado = '<img class="icone" src="../../assets/icons/pato.png" alt="pato" title="pato">';
         } else if (palavraMontada === "LAMA") {
@@ -151,6 +155,7 @@ function montarPalavra() {
         divResultado.innerHTML = "❌";
     }
 }
+
 function adicionarAoDicionario(conteudo) {
     // Verifica se ainda há espaço no dicionário
     if (proximaPosicaoDicionario <= 8) {
@@ -176,7 +181,7 @@ function adicionarAoDicionario(conteudo) {
 
 function limparAreaMontagem() {
     // Remove totalmente as sílabas da área de montagem
-    $("#silaba1, #silaba2").empty();
+    $("#silaba1, #silaba2, #silaba3").empty();
 
     // Limpa o resultado
     document.getElementById("resultado").innerHTML = "";

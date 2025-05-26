@@ -1,0 +1,200 @@
+@font-face {
+    font-family: 'pixel';
+    src: url(/assets/pixel-font.ttf);
+    font-weight: bold;
+}
+
+:root {
+    --transition-duration-short: 0.3s;
+    --transition-duration-medium: 0.5s;
+    --hover-scale-factor: 1.05;
+    --active-scale-factor: 0.98;
+    --focus-outline-color: #007bff;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: pixel;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Utilitários */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.fade-in {
+    animation: fadeIn var(--transition-duration-short) ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut var(--transition-duration-short) ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
+.video-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
+
+.video-element--hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+.choice-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/escolha-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-duration-medium) ease-in-out, visibility var(--transition-duration-medium) ease-in-out;
+}
+
+.choice-screen--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.choice-content {
+    height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.game-option:hover {
+    transform: scale(var(--hover-scale-factor));
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+
+.game-option:focus-visible {
+    outline: 3px solid var(--focus-outline-color);
+    outline-offset: 4px;
+    box-shadow: 0 0 0 6px rgba(0, 123, 255, 0.25);
+}
+
+.game-option:active {
+    transform: scale(var(--active-scale-factor));
+}
+
+.game-plaque {
+    width: 200px;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    transition: filter var(--transition-duration-short) ease-in-out;
+}
+
+.game-option:hover .game-plaque {
+    filter: brightness(1.2);
+}
+
+.skip-button {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(50%);
+    z-index: 15;
+    /* Acima de outros elementos na choice-screen */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-duration-short) ease-in-out, visibility var(--transition-duration-short) ease-in-out;
+}
+
+.skip-button--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 768px) {
+    .choice-content {
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .choice-options-list {
+        flex-direction: column;
+        gap: 2rem !important;
+    }
+
+    .game-plaque {
+        width: 180px;
+    }
+
+    .game-option:hover {
+        transform: scale(1.02);
+    }
+
+    .choice-prompt {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-plaque {
+        width: 150px;
+    }
+
+    .choice-content {
+        padding: 1rem;
+    }
+}

@@ -1,9 +1,15 @@
+@font-face {
+    font-family: 'pixel';
+    src: url(/assets/pixel-font.ttf);
+    font-weight: bold;
+}
+
 body {
     background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: sans-serif;
+    font-family: pixel;
     min-height: 100vh;
 }
 
@@ -11,23 +17,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 42px;
-    height: 42px;
-    line-height: 60px;
+
+    width: 3rem;
+    height: 3rem;
+    line-height: 3.5rem;
+
+    font-size: 1.3rem;
     font-weight: bold;
-    font-family: sans-serif;
+    font-family: pixel;
     cursor: grab;
-    border: 3px solid rgba(0, 0, 0, 0.3);
+
+    border: 0.26rem solid rgba(0, 0, 0, 0.3);
     box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.3), inset -2px -2px 0 rgba(0, 0, 0, 0.3);
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+
     color: white;
-    transition: transform 200ms;
     background-image: url(../assets/images/texture.png);
     background-size: cover;
     background-blend-mode: multiply;
     user-select: none;
 }
-
 
 .silaba:active {
     animation: jelly 960ms linear both;
@@ -122,17 +131,3 @@ body {
 }
 
 /*=========================================================================================================*/
-
-.experimental {
-    color: #211d1cc3;
-    background-color: #ffffff62;
-    backdrop-filter: blur(6px);
-    text-align: center;
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-}
-
-a{
-    color: #0046c9d4;
-}

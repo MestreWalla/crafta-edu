@@ -1,30 +1,62 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="3;url=pages/intro.html">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loading</title>
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
+  <meta name="description" content="Jogo educativo interativo. Escolha entre as matérias Português e Matemática para começar a aprender e se divertir.">
+  <title>Jogo Educativo Interativo</title>
 
-    video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-  </style>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/loading.css">
+
+  <link rel="preload" href="assets/videos/loading.mp4" as="video" type="video/mp4">
+  <link rel="preload" href="assets/videos/intro.mp4" as="video" type="video/mp4">
+  <link rel="preload" href="assets/images/escolha-background.png" as="image">
 </head>
 
 <body>
-  <video autoplay muted src="/assets/videos/loading.mp4"></video>
-</body>
+  <main id="game-container">
 
+    <video id="video-loading" class="video-element" muted playsinline preload="auto" aria-label="Vídeo de carregamento da aplicação">
+      <source src="assets/videos/loading.mp4" type="video/mp4">
+      <p>Seu navegador não suporta a tag de vídeo HTML5. Considere atualizá-lo.</p>
+    </video>
+
+    <video id="video-intro" class="video-element video-element--hidden" muted playsinline preload="auto" aria-label="Vídeo de introdução ao jogo">
+      <source src="assets/videos/intro.mp4" type="video/mp4">
+      <p>Seu navegador não suporta a tag de vídeo HTML5. Considere atualizá-lo.</p>
+    </video>
+
+    <section id="choice-screen" class="choice-screen choice-screen--hidden" role="dialog" aria-labelledby="choice-title" aria-modal="true" tabindex="-1">
+      <div class="choice-content d-flex justify-content-center align-items-center">
+        <div class="text-center">
+          <h1 id="choice-title" class="sr-only">Escolha seu jogo</h1>
+          <p class="choice-prompt" aria-hidden="true">Escolha seu jogo</p>
+
+          <nav aria-label="Opções de jogo">
+            <ul class="choice-options-list d-flex flex-wrap justify-content-center align-items-center gap-4 list-unstyled">
+              <li>
+                <a href="pages/portugues/index.html" class="game-option" aria-label="Jogar Português. Clique para iniciar o jogo de Português." role="button">
+                  <img src="assets/images/placa-port.png" class="game-plaque" alt="Placa decorativa indicando o jogo de Português." loading="lazy" width="200" height="280">
+                  </a>
+              </li>
+              <li>
+                <a href="pages/matematica/index.html" class="game-option" aria-label="Jogar Matemática. Clique para iniciar o jogo de Matemática." role="button">
+                  <img src="assets/images/placa-mat.png" class="game-plaque" alt="Placa decorativa indicando o jogo de Matemática." loading="lazy" width="200" height="280">
+                  </a>
+              </li>
+            </ul>
+          </nav>
+          <button id="skip-intro-button" class="btn btn-outline-light mt-4 skip-button skip-button--hidden">Pular Introdução</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/main.js" type="module"></script>
+  </body>
 </html>

@@ -1,5 +1,5 @@
 :root {
-  --slot-size: 4rem;
+  --slot-size: 72px;
   --slot-gap: 0.25rem;
 
   --inventory-bg: #c6c6c6;
@@ -40,7 +40,6 @@
   gap: var(--slot-gap);
 }
 
-
 .crafting-grid {
   display: grid;
   grid-template-columns: repeat(3, var(--slot-size));
@@ -58,7 +57,6 @@
 }
 
 .slot {
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,13 +77,29 @@
   background-color: var(--slot-hover-bg);
 }
 
+.slot-dicionario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  background-color: var(--slot-bg);
+  width: var(--slot-size);
+  height: var(--slot-size);
+  position: relative;
+
+  border-top: var(--inner-border-size) solid var(--inner-shadow-dark);
+  border-left: var(--inner-border-size) solid var(--inner-shadow-dark);
+  border-bottom: var(--inner-border-size) solid var(--inner-shadow-light);
+  border-right: var(--inner-border-size) solid var(--inner-shadow-light);
+}
+
 .ui-draggable-dragging {
   z-index: 1;
 }
 
 /*Tablet*/
-@media (max-width: 700px),
-(max-height: 730px) {
+@media (max-width: 700px), (max-height: 730px) {
   :root {
     --slot-size: 64px;
     --slot-gap: 4px;
@@ -108,8 +122,7 @@
 }
 
 /*Mobile Device*/
-@media (max-width: 480px),
-(max-height: 700px) {
+@media (max-width: 480px), (max-height: 700px) {
   :root {
     --slot-size: 52px;
     --slot-gap: 4px;

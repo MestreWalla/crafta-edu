@@ -16,9 +16,9 @@
 .tabs-container::after {
   content: "";
   position: absolute;
-  top: -18%;
-  width: 11.6rem;
-  height: 5rem;
+  top: -24%;
+  width: 193px;
+  height: 100px;
   background: rgb(0, 0, 0);
   z-index: -1;
 }

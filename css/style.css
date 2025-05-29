@@ -1,7 +1,16 @@
 @font-face {
   font-family: "pixel";
-  src: url(../assets/pixel-font.ttf);
+  src: url(../assets/regular.otf);
   font-weight: bold;
+  font-style: normal;
+}
+
+.pixelRender {
+  font-family: "pixel";
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: never;
+  font-feature-settings: "liga" 0;
 }
 
 body {
@@ -9,8 +18,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: pixel;
+  font-family: "pixel", monospace;
   min-height: 100vh;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: never;
+  font-feature-settings: "liga" 0;
 }
 
 .silaba {

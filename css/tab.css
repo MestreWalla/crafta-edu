@@ -1,14 +1,17 @@
 .tabs-container {
   border: var(--border-size2) solid #2e2d30;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
   background-color: #484848;
   display: flex;
   justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
   margin-top: 50px;
   position: relative;
   border-bottom: 0px;
-  padding: 0px 20px 0px 20px;
-  left: 220px;
+  padding: 10px 20px;
+  left: 182px;
   border-top: var(--border-size2) solid #727272;
   border-left: var(--border-size2) solid #727272;
 }
@@ -16,11 +19,35 @@
 .tabs-container::after {
   content: "";
   position: absolute;
-  top: -24%;
-  width: 193px;
+  top: -15%;
+  width: 107%;
   height: 100px;
   background: rgb(0, 0, 0);
   z-index: -1;
+}
+
+.tab-fechar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 7px;
+  margin: 0 8px;
+  text-decoration: none;
+  font-size: 34px;
+  color: #ebebeb;
+  text-align: center;
+}
+
+.tab-pergunta {
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+  text-decoration: none;
+  font-size: 34px;
+  color: #ebebeb;
+  text-align: center;
 }
 
 .tab {
@@ -34,24 +61,29 @@
   border-color: var(--outer-border-colors);
   box-shadow: 0 0 0 var(--border-size) var(--outline-color),
     0 var(--border-size) 0 0 var(--outline-color);
+
   display: flex;
   align-items: center;
   justify-content: center;
+  align-content: center;
+
   cursor: pointer;
   font-weight: bold;
   font-size: 24px;
   color: #333;
   position: relative;
   z-index: 2;
-  margin: 8px 8px 8px 8px;
+  margin: 8px;
+  height: 50px;
+  width: 70px;
 }
 
 .tab.active {
-  box-shadow: 0 0 0 var(--border-size) #ffffff, 0 var(--border-size) 0 0 #ffffff;
-  border-top: var(--inner-border-size) solid #6c78b4cd;
-  border-left: var(--inner-border-size) solid #6c78b4cd;
-  border-bottom: var(--inner-border-size) solid #e7eafab1;
-  border-right: var(--inner-border-size) solid #e7eafab1;
-  background-color: #9ea9f3;
+  box-shadow: 0 0 0 var(--border-size) #131313, 0 var(--border-size) 0 0 #131313;
+  border-top: var(--inner-border-size) solid #5d5d5d;
+  border-left: var(--inner-border-size) solid #5d5d5d;
+  border-bottom: var(--inner-border-size) solid #ebebeb;
+  border-right: var(--inner-border-size) solid #ebebeb;
+  background-color: #8b8b8b;
   z-index: 3;
 }

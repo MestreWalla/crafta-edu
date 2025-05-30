@@ -5,10 +5,10 @@
   --inventory-bg: #c6c6c6;
   --slot-bg: #8b8b8b;
   --slot-hover-bg: #9d9d9d;
-  --inner-shadow-dark: #373737;
+  --inner-shadow-dark: #555555;
   --inner-shadow-light: #ffffff;
   --outer-border-colors: #ffffff #555555 #555555 #ffffff;
-  --outline-color: #000000;
+  --outline-color: #131313;
 
   --border-size2: 8px;
   --border-size: 4px;
@@ -18,7 +18,7 @@
 .textInv {
   margin: -13px 16px;
   color: #3f3f3f;
-  font-size: 36px;
+  font-size: 34px;
 }
 
 .textTitle {
@@ -26,6 +26,11 @@
   font-size: 36px;
   justify-content: center;
   text-align: center;
+}
+
+.alinhado {
+  display: flex;
+  align-items: flex-start;
 }
 
 .inventory-container {
@@ -37,7 +42,7 @@
   box-shadow: 0 0 0 var(--border-size) var(--outline-color);
 }
 
-.crafting-section { 
+.crafting-section {
   margin: 79px 0px 72px 0px;
   display: flex;
   align-items: center;

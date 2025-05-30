@@ -31,6 +31,7 @@
 .alinhado {
   display: flex;
   align-items: flex-start;
+  gap: 10px;
 }
 
 .inventory-container {
@@ -49,7 +50,7 @@
   border: var(--border-size2) solid;
   border-color: var(--outer-border-colors);
   box-shadow: 0 0 0 var(--border-size) var(--outline-color);
-  padding: 50px 10px;
+  padding: 22px 22px;
 }
 
 .crafting-section {
@@ -64,6 +65,9 @@
   display: grid;
   grid-template-columns: repeat(2, var(--slot-size));
   gap: var(--slot-gap);
+  background-color: #373737;
+  padding: 100px 20px;
+  border: var(--border-size) solid var(--outline-color);
 }
 
 .crafting-grid {

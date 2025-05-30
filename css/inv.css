@@ -42,6 +42,16 @@
   box-shadow: 0 0 0 var(--border-size) var(--outline-color);
 }
 
+.dicionario-container {
+  background-color: var(--inventory-bg);
+  display: inline-flex;
+  flex-direction: column;
+  border: var(--border-size2) solid;
+  border-color: var(--outer-border-colors);
+  box-shadow: 0 0 0 var(--border-size) var(--outline-color);
+  padding: 50px 10px;
+}
+
 .crafting-section {
   margin: 79px 0px 72px 0px;
   display: flex;

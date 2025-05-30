@@ -22,7 +22,7 @@
   top: -15%;
   width: 107%;
   height: 100px;
-  background: rgb(0, 0, 0);
+  background: #131313;
   z-index: -1;
 }
 
@@ -48,6 +48,11 @@
   font-size: 34px;
   color: #ebebeb;
   text-align: center;
+}
+
+.tab-fechar:hover,
+.tab-pergunta:hover {
+  color: #c9c8c8;
 }
 
 .tab {

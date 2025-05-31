@@ -18,14 +18,22 @@
 .textInv {
   margin: -13px 16px;
   color: #3f3f3f;
-  font-size: 34px;
+  font-size: 32px;
 }
 
 .textTitle {
   color: #3f3f3f;
-  font-size: 36px;
+  font-size: 32px;
   justify-content: center;
   text-align: center;
+}
+
+.textDicio {
+  color: #3f3f3f;
+  font-size: 32px;
+  text-align: right;
+  line-height: 20px;
+  margin-top: 10px;
 }
 
 .alinhado {
@@ -50,11 +58,11 @@
   border: var(--border-size2) solid;
   border-color: var(--outer-border-colors);
   box-shadow: 0 0 0 var(--border-size) var(--outline-color);
-  padding: 22px 22px;
+  padding: 20px 16px 16px 16px;
 }
 
 .crafting-section {
-  margin: 79px 0px 72px 0px;
+  margin: 59px 0px 52px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,11 +71,34 @@
 
 .dicionario-grid {
   display: grid;
-  grid-template-columns: repeat(2, var(--slot-size));
-  gap: var(--slot-gap);
-  background-color: #373737;
-  padding: 100px 20px;
+  grid-template-columns: repeat(3, var(--slot-size));
+  padding: 34px 20px;
+}
+
+.dicionario-section {
   border: var(--border-size) solid var(--outline-color);
+  background-color: #484848;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.search-section {
+  display: flex;
+  align-items: center;
+}
+.search-container {
+  margin: 10px;
+  height: 50px;
+  width: 180px;
+  background-color: #000000;
+  border: 4px solid #a8a8a8;
+  padding: 10px;
+  color: #a8a8a8;
+}
+
+input::placeholder {
+  color: #a8a8a8;
+  font-size: 22px;
 }
 
 .crafting-grid {
@@ -86,7 +117,10 @@
   display: grid;
   grid-template-columns: repeat(9, var(--slot-size));
 }
-
+.i {
+  width: 68px;
+  height: 68px;
+}
 .slot {
   display: flex;
   justify-content: center;

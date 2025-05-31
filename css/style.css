@@ -5,13 +5,6 @@
   font-style: normal;
 }
 
-.pixelRender {
-  font-family: "pixel";
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "liga" 0;
-}
-
 body {
   background-color: #f0f0f0;
   display: flex;
@@ -20,7 +13,7 @@ body {
   font-family: "pixel", monospace;
   min-height: 100vh;
   -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
 }
 
 .silaba {
@@ -127,13 +120,22 @@ body {
 
 /* Estilo para os itens no dicionário */
 .palavra-dicionario {
-  width: 100%;
-  height: 100%;
+  width: 68px;
+  height: 68px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: all 0.3s;
+  background-color: #8b8b8b;
+
+  border-top: var(--inner-border-size) solid var(--inner-shadow-dark);
+  border-left: var(--inner-border-size) solid var(--inner-shadow-dark);
+  border-bottom: var(--inner-border-size) solid var(--inner-shadow-light);
+  border-right: var(--inner-border-size) solid var(--inner-shadow-light);
+  border-color: var(--outer-border-colors);
+  box-shadow: 1px 1px 0 var(--border-size) var(--outline-color),
+    0 var(--border-size) 0 0 var(--outline-color);
 }
 
 .palavra-dicionario:hover {

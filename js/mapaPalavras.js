@@ -13,5 +13,6 @@ const PALAVRAS_VALIDAS = {
   "DADO": "dado.png",
   "BOLO": "bolo.png",
   "PATO": "pato.png",
-  "LAMA": "lama.png"
+  "LAMA": "lama.png",
+  "BOCAMA": "lama.png"
 };

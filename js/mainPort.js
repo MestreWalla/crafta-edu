@@ -104,7 +104,7 @@ function montarPalavra() {
   }
   let divResultado = document.getElementById("resultado");
   if (palavraMontada === "") {
-    divResultado.innerHTML = "(Arraste as sílabas)";
+    divResultado.innerHTML = "?";
   } else if (PALAVRAS_VALIDAS[palavraMontada]) {
     // Define o conteúdo do resultado
     let conteudoResultado = "";

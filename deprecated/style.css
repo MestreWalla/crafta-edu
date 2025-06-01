@@ -133,8 +133,10 @@ body {
   border-left: var(--inner-border-size) solid var(--inner-shadow-dark);
   border-bottom: var(--inner-border-size) solid var(--inner-shadow-light);
   border-right: var(--inner-border-size) solid var(--inner-shadow-light);
-  border-color: var(--outer-border-colors);
-  box-shadow: 1px 1px 0 var(--border-size) var(--outline-color),
+
+  outline: var(--inner-border-size) solid #CECDCC;
+
+  box-shadow: 4px 4px 0 var(--border-size) var(--outline-color),
     0 var(--border-size) 0 0 var(--outline-color);
 }
 

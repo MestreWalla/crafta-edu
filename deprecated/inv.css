@@ -73,6 +73,7 @@
   display: grid;
   grid-template-columns: repeat(3, var(--slot-size));
   padding: 34px 20px;
+  gap: 8px;
 }
 
 .dicionario-section {

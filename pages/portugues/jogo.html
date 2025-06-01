@@ -12,24 +12,11 @@
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
     />
-    <link rel="stylesheet" href="../../css/style.css" />
-    <link rel="stylesheet" href="../../css/inv.css" />
-    <link rel="stylesheet" href="../../css/botao.css" />
-    <link rel="stylesheet" href="../../css/animation.css" />
-    <link rel="stylesheet" href="../../css/tab.css" />
+    <link rel="stylesheet" href="../../css/base.css" />
     <style>
       body,
       html {
         background-image: url(../../assets/images/port-background.png);
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        z-index: -1;
       }
 
       .grid-2 {
@@ -46,12 +33,12 @@
     <div class="tabs-container">
       <div class="tab active" data-slots="2">2</div>
       <div class="tab" data-slots="3">3</div>
-      <a class="tab-pergunta" href="../../index.html">?</a>
-      <a class="tab-fechar" href="../../index.html">x</a>
+      <a class="tab-help" href="../../index.html">?</a>
+      <a class="tab-close" href="../../index.html">x</a>
     </div>
     <div class="alinhado">
       <div class="dicionario-container">
-        <p class="textDicio ">Dicionário</p>
+        <p class="text-dicionario">Dicionário</p>
         <div class="dicionario-section">
           <div class="search-section">
             <img src="../../assets/images/search.png" alt="" height="50px" />
@@ -77,17 +64,17 @@
           </div>
         </div>
       </div>
-      <div class="inventory-container">
-        <div class="textTitle">Jogo</div>
+      <div class="inv-container">
+        <div class="text-inv-title">Jogo</div>
         <div class="crafting-section">
-          <div class="crafting-grid grid-2" id="craftingGrid"></div>
+          <div class="inv-grid grid-2" id="craftingGrid"></div>
           <img class="seta" src="../../assets/images/arrow.png" />
           <div class="slot result-slot">
             <span id="resultado"></span>
           </div>
         </div>
-        <div class="textInv">Inventário</div>
-        <div class="main-inventory">
+        <div class="text-inv-label">Inventário</div>
+        <div class="inv-grid">
           <div class="slot">
             <li class="ui-state-default silaba" tipo="B">BA</li>
           </div>
@@ -155,8 +142,10 @@
       </div>
     </div>
 
-    <div class="controles text-center mb-3 pt-3">
-      <button onclick="montarPalavra()">Montar Palavra</button>
+    <div class="button-controls text-center mb-3 pt-3">
+      <button class="btn-primary" onclick="montarPalavra()">
+        Montar Palavra
+      </button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,171 @@
+@import url('base.css');
+/* ===========================================
+   INVENTORY SYSTEM & SLOTS
+   =========================================== */
+
+/* Inventory Container */
+.inv-container {
+  background-color: var(--inventory-bg);
+  display: inline-flex;
+  flex-direction: column;
+  border: var(--border-size2) solid;
+  border-color: var(--outer-border-colors);
+  box-shadow: 0 0 0 var(--border-size) var(--outline-color);
+}
+
+/* Main Inventory Grid */
+.inv-grid {
+  margin: 16px;
+  display: grid;
+  grid-template-columns: repeat(9, var(--slot-size));
+}
+
+/* Crafting Section */
+.crafting-section {
+  margin: 59px 0px 52px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--slot-gap) * 1);
+}
+
+.crafting-grid {
+  display: grid;
+  grid-template-columns: repeat(3, var(--slot-size));
+  gap: var(--slot-gap);
+}
+
+.result-slot {
+  width: calc(var(--slot-size) * 1.5);
+  height: var(--slot-size);
+}
+
+/* Slot Styles */
+.slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: var(--slot-bg);
+  width: var(--slot-size);
+  height: var(--slot-size);
+  position: relative;
+  border-top: var(--inner-border-size) solid var(--inner-shadow-dark);
+  border-left: var(--inner-border-size) solid var(--inner-shadow-dark);
+  border-bottom: var(--inner-border-size) solid var(--inner-shadow-light);
+  border-right: var(--inner-border-size) solid var(--inner-shadow-light);
+}
+
+.slot:hover {
+  background-color: var(--slot-hover-bg);
+}
+
+/* Drop Zone Slots */
+.slot-soltar {
+  color: transparent;
+}
+
+.slot-soltar.preenchido {
+  font-weight: bold;
+}
+
+.slot-soltar:hover {
+  border-color: #007bff;
+  background-color: #c0c0c0;
+}
+
+/* Draggable Item Styles */
+.i {
+  width: 68px;
+  height: 68px;
+}
+
+.ui-draggable-dragging {
+  z-index: 1;
+}
+
+/* Dictionary Container */
+.dicionario-container {
+  background-color: var(--inventory-bg);
+  display: inline-flex;
+  flex-direction: column;
+  border: var(--border-size2) solid;
+  border-color: var(--outer-border-colors);
+  box-shadow: 0 0 0 var(--border-size) var(--outline-color);
+  padding: 20px 16px 16px 16px;
+}
+
+.dicionario-section {
+  border: var(--border-size) solid var(--outline-color);
+  background-color: #484848;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dicionario-grid {
+  display: grid;
+  grid-template-columns: repeat(3, var(--slot-size));
+  padding: 34px 20px;
+  gap: 8px;
+}
+
+.dicionario-slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: var(--slot-bg);
+  width: var(--slot-size);
+  height: var(--slot-size);
+  position: relative;
+  border-top: var(--inner-border-size) solid var(--inner-shadow-dark);
+  border-left: var(--inner-border-size) solid var(--inner-shadow-dark);
+  border-bottom: var(--inner-border-size) solid var(--inner-shadow-light);
+  border-right: var(--inner-border-size) solid var(--inner-shadow-light);
+}
+
+/* Dictionary Word Items */
+.dicionario-icon {
+  width: 68px;
+  height: 68px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: #8b8b8b;
+  border-top: var(--inner-border-size) solid var(--inner-shadow-dark);
+  border-left: var(--inner-border-size) solid var(--inner-shadow-dark);
+  border-bottom: var(--inner-border-size) solid var(--inner-shadow-light);
+  border-right: var(--inner-border-size) solid var(--inner-shadow-light);
+  outline: var(--inner-border-size) solid #CECDCC;
+  box-shadow: 
+    4px 4px 0 var(--border-size) var(--outline-color),
+    0 var(--border-size) 0 0 var(--outline-color);
+}
+
+.dicionario-icon:hover {
+  box-shadow: 0 0 20px 10px rgb(255, 255, 255);
+}
+
+/* Search Section */
+.search-section {
+  display: flex;
+  align-items: center;
+}
+
+.search-container {
+  margin: 10px;
+  height: 50px;
+  width: 180px;
+  background-color: #000000;
+  border: 4px solid #a8a8a8;
+  padding: 10px;
+  color: #a8a8a8;
+}
+
+input::placeholder {
+  color: #a8a8a8;
+  font-size: var(--text-medium);
+}

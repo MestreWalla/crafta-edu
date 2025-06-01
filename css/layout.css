@@ -1,0 +1,104 @@
+/* ===========================================
+   LAYOUT & TYPOGRAPHY
+   =========================================== */
+
+/* Text Styles */
+.text-inv-label {
+  margin: -13px 16px;
+  color: var(--text-color-primary);
+  font-size: var(--text-large);
+}
+
+.text-inv-title {
+  color: var(--text-color-primary);
+  font-size: var(--text-large);
+  justify-content: center;
+  text-align: center;
+}
+
+.text-dicionario {
+  color: var(--text-color-primary);
+  font-size: var(--text-large);
+  text-align: right;
+  line-height: 20px;
+  margin-top: 10px;
+}
+
+/* Layout Utilities */
+.alinhado {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Video & Choice Screen Styles */
+.video-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+.video-element--hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.choice-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/images/escolha-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: 
+    opacity var(--transition-duration-medium) ease-in-out,
+    visibility var(--transition-duration-medium) ease-in-out;
+}
+
+.choice-screen--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.choice-content {
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.game-plaque {
+  width: 200px;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  transition: filter var(--transition-duration-short) ease-in-out;
+}
+
+.game-option:hover .game-plaque {
+  filter: brightness(1.2);
+}
+
+/* Loading Screen Styles */
+.loading-screen {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: pixel;
+  background-color: #000;
+  color: #fff;
+}

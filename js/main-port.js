@@ -197,14 +197,14 @@ function montarPalavra() {
 
 function adicionarAoDicionario(conteudo) {
   // Verifica se ainda há espaço no dicionário
-  if (proximaPosicaoDicionario <= 8) {
+  if (proximaPosicaoDicionario <= 12) {
     const espacoDicionario = document.getElementById(
       "dicionario" + proximaPosicaoDicionario
     );
 
     // Cria um elemento para o dicionário
     const elementoDicionario = document.createElement("div");
-    elementoDicionario.className = "palavra-dicionario";
+    elementoDicionario.className = "dicionario-icon";
     elementoDicionario.innerHTML = conteudo;
 
     // Adiciona ao dicionário

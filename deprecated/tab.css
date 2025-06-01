@@ -1,7 +1,3 @@
-/* ===========================================
-   TAB SYSTEM
-   =========================================== */
-
 .tabs-container {
   border: var(--border-size2) solid #2e2d30;
   margin-bottom: 4px;
@@ -30,7 +26,7 @@
   z-index: -1;
 }
 
-.tab-close {
+.tab-fechar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +38,7 @@
   text-align: center;
 }
 
-.tab-help {
+.tab-pergunta {
   font-weight: normal;
   display: flex;
   justify-content: center;
@@ -54,8 +50,8 @@
   text-align: center;
 }
 
-.tab-close:hover,
-.tab-help:hover {
+.tab-fechar:hover,
+.tab-pergunta:hover {
   color: #c9c8c8;
 }
 
@@ -68,13 +64,14 @@
   border-bottom: var(--inner-border-size) solid var(--inner-shadow-light);
   border-right: var(--inner-border-size) solid var(--inner-shadow-light);
   border-color: var(--outer-border-colors);
-  box-shadow: 
-    0 0 0 var(--border-size) var(--outline-color),
+  box-shadow: 0 0 0 var(--border-size) var(--outline-color),
     0 var(--border-size) 0 0 var(--outline-color);
+
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: center;
+
   cursor: pointer;
   font-weight: bold;
   font-size: 24px;
@@ -87,9 +84,7 @@
 }
 
 .tab.active {
-  box-shadow: 
-    0 0 0 var(--border-size) #131313, 
-    0 var(--border-size) 0 0 #131313;
+  box-shadow: 0 0 0 var(--border-size) #131313, 0 var(--border-size) 0 0 #131313;
   border-top: var(--inner-border-size) solid #5d5d5d;
   border-left: var(--inner-border-size) solid #5d5d5d;
   border-bottom: var(--inner-border-size) solid #ebebeb;

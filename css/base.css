@@ -1,3 +1,108 @@
+@import url('base.css');
+@import url('layout.css');
+@import url('buttons.css');
+@import url('inventory.css');
+@import url('silabas.css');
+@import url('tab.css');
+@import url('responsive.css');
+
+/* ===========================================
+   BASE STYLES & CSS RESET
+   =========================================== */
+
+@font-face {
+  font-family: "pixel";
+  src: url(../assets/pixel-font.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "pixel-regular";
+  src: url(../assets/regular.otf);
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* CSS Variables */
+:root {
+  /* Slot & Inventory Variables */
+  --slot-size: 72px;
+  --slot-gap: 0.25rem;
+  --inventory-bg: #c6c6c6;
+  --slot-bg: #8b8b8b;
+  --slot-hover-bg: #9d9d9d;
+  --inner-shadow-dark: #555555;
+  --inner-shadow-light: #ffffff;
+  --outer-border-colors: #ffffff #555555 #555555 #ffffff;
+  --outline-color: #131313;
+  --border-size2: 8px;
+  --border-size: 4px;
+  --inner-border-size: 4px;
+
+  /* Animation & Transition Variables */
+  --transition-short: 0.3s;
+  --transition-medium: 0.5s;
+  --hover-scale-factor: 1.05;
+  --active-scale-factor: 0.98;
+  --focus-outline-color: #007bff;
+
+  /* Typography Variables */
+  --text-color-primary: #3f3f3f;
+  --text-large: 32px;
+  --text-medium: 22px;
+  --text-small: 18px;
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base Body Styles */
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "pixel-regular", monospace;
+  background-color: #f0f0f0;
+  color: #fff;
+  -webkit-font-smoothing: none;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Utility Classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-short) ease-in-out forwards;
+}
+
+.fade-out {
+  animation: fadeOut var(--transition-short) ease-in-out forwards;
+}
+
+/* Keyframe Animations */
 .jelly {
   animation: jelly 960ms linear both;
 }

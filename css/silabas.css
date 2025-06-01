@@ -1,0 +1,82 @@
+/* ===========================================
+   SILABAS ELEMENTOS
+   =========================================== */
+
+/* Base silaba Style */
+.silaba {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: pixel;
+  cursor: grab;
+  border: 0.26rem solid rgba(0, 0, 0, 0.3);
+  box-shadow: 
+    inset 2px 2px 0 rgba(255, 255, 255, 0.3),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+  color: white;
+  background-image: url(../assets/images/texture.png);
+  background-size: cover;
+  background-blend-mode: multiply;
+  user-select: none;
+}
+
+.silaba:active {
+  animation: jelly 960ms linear both;
+}
+
+/* silaba Color Types */
+.silaba[data-type="B"],
+.silaba[tipo="B"] {
+  background-color: #3498db;
+}
+
+.silaba[data-type="C"],
+.silaba[tipo="C"] {
+  background-color: #2ecc71;
+}
+
+.silaba[data-type="D"],
+.silaba[tipo="D"] {
+  background-color: #e74c3c;
+}
+
+.silaba[data-type="F"],
+.silaba[tipo="F"] {
+  background-color: #f1c40f;
+}
+
+.silaba[data-type="G"],
+.silaba[tipo="G"] {
+  background-color: #9b59b6;
+}
+
+.silaba[data-type="L"],
+.silaba[tipo="L"] {
+  background-color: #e67e22;
+}
+
+.silaba[data-type="M"],
+.silaba[tipo="M"] {
+  background-color: #a18479;
+}
+
+.silaba[data-type="P"],
+.silaba[tipo="P"] {
+  background-color: #f164a8;
+}
+
+.silaba[data-type="S"],
+.silaba[tipo="S"] {
+  background-color: #afb7b8;
+}
+
+.silaba[data-type="T"],
+.silaba[tipo="T"] {
+  background-color: #1abc9c;
+}

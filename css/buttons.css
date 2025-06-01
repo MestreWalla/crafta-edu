@@ -1,0 +1,141 @@
+/* ===========================================
+   BUTTON STYLES & CONTROLS
+   =========================================== */
+
+/* Button Controls Container */
+.button-controls {
+  width: 100%;
+  max-width: 680px;
+  text-align: center;
+}
+
+/* Main Button Styles */
+.btn-primary {
+  padding: 10px 40px;
+  font-size: var(--text-size-small);
+  background-color: #333;
+  color: #fff;
+  text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 0;
+  z-index: 1;
+  user-select: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: unset;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-weight: 900;
+  transition: all 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+}
+
+.btn-primary:before {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: "";
+  transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+  z-index: -1;
+  background-color: #333 !important;
+  box-shadow: 
+    0 -4px rgb(0 0 0 / 50%) inset, 
+    0 4px rgb(255 255 255 / 20%) inset,
+    -4px 0 rgb(255 255 255 / 20%) inset, 
+    4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+.btn-primary:after {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: "";
+  box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+  transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+}
+
+.btn-primary:hover:before {
+  box-shadow: 
+    0 -4px rgb(0 0 0 / 50%) inset, 
+    0 4px rgb(255 255 255 / 20%) inset,
+    -4px 0 rgb(255 255 255 / 20%) inset, 
+    4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+.btn-primary:hover:after {
+  box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+}
+
+.btn-primary:active {
+  transform: translateY(4px);
+}
+
+.btn-primary:active:after {
+  box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
+}
+
+/* Game Option Buttons */
+.game-option {
+  transition: 
+    transform var(--transition-duration-short) ease-in-out,
+    box-shadow var(--transition-duration-short) ease-in-out;
+}
+
+.game-option:hover {
+  transform: scale(var(--hover-scale-factor));
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+.game-option:focus-visible {
+  outline: 3px solid var(--focus-outline-color);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 6px rgba(0, 123, 255, 0.25);
+}
+
+.game-option:active {
+  transform: scale(var(--active-scale-factor));
+}
+
+/* Skip Button */
+.skip-button {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(50%);
+  z-index: 15;
+  opacity: 0;
+  visibility: hidden;
+  transition: 
+    opacity var(--transition-duration-short) ease-in-out,
+    visibility var(--transition-duration-short) ease-in-out;
+}
+
+.skip-button--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Arrow Navigation */
+.seta {
+  margin-right: 30px;
+  margin-left: 30px;
+  height: 46px;
+  user-select: none;
+}
+
+/* Icon Styles */
+.icone {
+  height: 50px;
+  user-select: none;
+}

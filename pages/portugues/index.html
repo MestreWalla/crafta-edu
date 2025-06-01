@@ -5,24 +5,23 @@
     <meta http-equiv="refresh" content="2;url=jogo.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jogo de Português</title>
-    <style>
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-      }
-
-      video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-      }
-    </style>
+    <link rel="stylesheet" href="../../css/base.css" />
   </head>
 
   <body>
-    <video autoplay muted src="../../assets/videos/load-port.mp4"></video>
+    <video
+      id="video-loading"
+      class="video-element"
+      muted
+      playsinline
+      preload="auto"
+      aria-label="Vídeo de carregamento da aplicação"
+      autoplay
+    >
+      <source src="../../assets/videos/load-port.mp4" type="video/mp4" />
+      <p>
+        Seu navegador não suporta a tag de vídeo HTML5. Considere atualizá-lo.
+      </p>
+    </video>
   </body>
 </html>

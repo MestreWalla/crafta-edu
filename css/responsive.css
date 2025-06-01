@@ -1,8 +1,3 @@
-/* ===========================================
-   RESPONSIVE DESIGN & MEDIA QUERIES
-   =========================================== */
-
-/* Tablet Styles */
 @media (max-width: 768px) {
   .choice-content {
     gap: 2rem;

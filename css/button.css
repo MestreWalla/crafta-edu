@@ -1,12 +1,12 @@
-.controles {
+.button-controls {
   width: 100%;
   max-width: 680px;
   text-align: center;
 }
 
-button {
+.btn-primary {
   padding: 10px 40px;
-  font-size: 18px;
+  font-size: var(--text-size-small);
   background-color: #333;
   color: #fff;
   text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
@@ -27,7 +27,7 @@ button {
   transition: all 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
 }
 
-button:before {
+.btn-primary:before {
   position: absolute;
   pointer-events: none;
   top: 0;
@@ -43,7 +43,7 @@ button:before {
     -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
 }
 
-button:after {
+.btn-primary:after {
   position: absolute;
   pointer-events: none;
   top: 0;
@@ -56,19 +56,19 @@ button:after {
   transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
 }
 
-button:hover:before {
+.btn-primary:hover:before {
   box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset,
     -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
 }
 
-button:hover:after {
+.btn-primary:hover:after {
   box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
 }
 
-button:active {
+.btn-primary:active {
   transform: translateY(4px);
 }
 
-button:active:after {
+.btn-primary:active:after {
   box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
 }

@@ -30,12 +30,13 @@
   </head>
 
   <body>
+    <div class="tab-borda">
     <div class="tabs-container">
       <div class="tab active" data-slots="2">2</div>
       <div class="tab" data-slots="3">3</div>
       <a class="tab-help" href="../../index.html">?</a>
       <a class="tab-close" href="../../index.html">x</a>
-    </div>
+    </div></div>
     <div class="alinhado">
       <div class="dicionario-container">
         <p class="text-dicionario">Dicionário</p>
@@ -65,15 +66,15 @@
         </div>
       </div>
       <div class="inv-container">
-        <div class="text-inv-title">Jogo</div>
+        <div class="text-inv">Jogo</div>
         <div class="crafting-section">
-          <div class="inv-grid grid-2" id="craftingGrid"></div>
+          <div class="crafting-grid grid-2" id="craft-grid"></div>
           <img class="seta" src="../../assets/images/arrow.png" />
           <div class="slot result-slot">
             <span id="resultado"></span>
           </div>
         </div>
-        <div class="text-inv-label">Inventário</div>
+        <div class="text-inv2">Inventário</div>
         <div class="inv-grid">
           <div class="slot">
             <li class="ui-state-default silaba" tipo="B">BA</li>
@@ -152,7 +153,9 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-    <script src="../../js/main-port.js"></script>
+    <script src="../../js/mapaPalavras.js"></script>
+    <script src="../../js/mainPort.js"></script>
+    <script src="../../js/search.js"></script>
     <script src="../../js/switchTab.js"></script>
   </body>
 </html>

@@ -1,6 +1,3 @@
-/* ===========================================
-   TAB SYSTEM
-   =========================================== */
 
 .tabs-container {
   border: var(--border-size2) solid #2e2d30;
@@ -18,16 +15,8 @@
   left: 315px;
   border-top: var(--border-size2) solid #727272;
   border-left: var(--border-size2) solid #727272;
-}
-
-.tabs-container::after {
-  content: "";
-  position: absolute;
-  top: -15%;
-  width: 107%;
-  height: 100px;
-  background: #131313;
-  z-index: -1;
+  z-index: 1;
+  outline: 5px solid #131313;
 }
 
 .tab-close {
@@ -68,8 +57,7 @@
   border-bottom: var(--inner-border-size) solid var(--inner-shadow-light);
   border-right: var(--inner-border-size) solid var(--inner-shadow-light);
   border-color: var(--outer-border-colors);
-  box-shadow: 
-    0 0 0 var(--border-size) var(--outline-color),
+  box-shadow: 0 0 0 var(--border-size) var(--outline-color),
     0 var(--border-size) 0 0 var(--outline-color);
   display: flex;
   align-items: center;
@@ -87,9 +75,7 @@
 }
 
 .tab.active {
-  box-shadow: 
-    0 0 0 var(--border-size) #131313, 
-    0 var(--border-size) 0 0 #131313;
+  box-shadow: 0 0 0 var(--border-size) #131313, 0 var(--border-size) 0 0 #131313;
   border-top: var(--inner-border-size) solid #5d5d5d;
   border-left: var(--inner-border-size) solid #5d5d5d;
   border-bottom: var(--inner-border-size) solid #ebebeb;

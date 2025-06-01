@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll(".tab");
-  const grid = document.getElementById("craftingGrid");
+  const grid = document.getElementById("craft-grid");
 
   function buildSlots(n) {
     grid.innerHTML = "";

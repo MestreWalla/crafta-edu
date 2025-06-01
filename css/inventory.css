@@ -1,90 +1,4 @@
-@import url('base.css');
-/* ===========================================
-   INVENTORY SYSTEM & SLOTS
-   =========================================== */
-
-/* Inventory Container */
-.inv-container {
-  background-color: var(--inventory-bg);
-  display: inline-flex;
-  flex-direction: column;
-  border: var(--border-size2) solid;
-  border-color: var(--outer-border-colors);
-  box-shadow: 0 0 0 var(--border-size) var(--outline-color);
-}
-
-/* Main Inventory Grid */
-.inv-grid {
-  margin: 16px;
-  display: grid;
-  grid-template-columns: repeat(9, var(--slot-size));
-}
-
-/* Crafting Section */
-.crafting-section {
-  margin: 59px 0px 52px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: calc(var(--slot-gap) * 1);
-}
-
-.crafting-grid {
-  display: grid;
-  grid-template-columns: repeat(3, var(--slot-size));
-  gap: var(--slot-gap);
-}
-
-.result-slot {
-  width: calc(var(--slot-size) * 1.5);
-  height: var(--slot-size);
-}
-
-/* Slot Styles */
-.slot {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  background-color: var(--slot-bg);
-  width: var(--slot-size);
-  height: var(--slot-size);
-  position: relative;
-  border-top: var(--inner-border-size) solid var(--inner-shadow-dark);
-  border-left: var(--inner-border-size) solid var(--inner-shadow-dark);
-  border-bottom: var(--inner-border-size) solid var(--inner-shadow-light);
-  border-right: var(--inner-border-size) solid var(--inner-shadow-light);
-}
-
-.slot:hover {
-  background-color: var(--slot-hover-bg);
-}
-
-/* Drop Zone Slots */
-.slot-soltar {
-  color: transparent;
-}
-
-.slot-soltar.preenchido {
-  font-weight: bold;
-}
-
-.slot-soltar:hover {
-  border-color: #007bff;
-  background-color: #c0c0c0;
-}
-
-/* Draggable Item Styles */
-.i {
-  width: 68px;
-  height: 68px;
-}
-
-.ui-draggable-dragging {
-  z-index: 1;
-}
-
-/* Dictionary Container */
+/* Dicionario */
 .dicionario-container {
   background-color: var(--inventory-bg);
   display: inline-flex;
@@ -125,7 +39,6 @@
   border-right: var(--inner-border-size) solid var(--inner-shadow-light);
 }
 
-/* Dictionary Word Items */
 .dicionario-icon {
   width: 68px;
   height: 68px;
@@ -139,9 +52,8 @@
   border-left: var(--inner-border-size) solid var(--inner-shadow-dark);
   border-bottom: var(--inner-border-size) solid var(--inner-shadow-light);
   border-right: var(--inner-border-size) solid var(--inner-shadow-light);
-  outline: var(--inner-border-size) solid #CECDCC;
-  box-shadow: 
-    4px 4px 0 var(--border-size) var(--outline-color),
+  outline: var(--inner-border-size) solid #cecdcc;
+  box-shadow: 4px 4px 0 var(--border-size) var(--outline-color),
     0 var(--border-size) 0 0 var(--outline-color);
 }
 
@@ -149,7 +61,31 @@
   box-shadow: 0 0 20px 10px rgb(255, 255, 255);
 }
 
-/* Search Section */
+.icone {
+  height: 50px;
+  user-select: none;
+}
+
+.text-dicionario {
+  color: var(--text-color-primary);
+  font-size: var(--text-large);
+  text-align: right;
+  line-height: 20px;
+  margin-top: 10px;
+}
+
+.i {
+  width: 68px;
+  height: 68px;
+}
+
+.alinhado {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Barra de Pesquisa */
 .search-section {
   display: flex;
   align-items: center;
@@ -168,4 +104,96 @@
 input::placeholder {
   color: #a8a8a8;
   font-size: var(--text-medium);
+}
+
+/* Inventário */
+.inv-container {
+  background-color: var(--inventory-bg);
+  display: inline-flex;
+  flex-direction: column;
+  border: var(--border-size2) solid;
+  border-color: var(--outer-border-colors);
+  box-shadow: 0 0 0 var(--border-size) var(--outline-color);
+}
+
+.inv-grid {
+  margin: 16px;
+  display: grid;
+  grid-template-columns: repeat(9, var(--slot-size));
+}
+
+.crafting-section {
+  margin: 59px 0px 52px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--slot-gap) * 1);
+}
+
+.crafting-grid {
+  display: grid;
+  grid-template-columns: repeat(2, var(--slot-size));
+  gap: var(--slot-gap);
+}
+
+.seta {
+  margin-right: 30px;
+  margin-left: 30px;
+  height: 46px;
+  user-select: none;
+}
+
+.result-slot {
+  width: calc(var(--slot-size) * 1.5);
+  height: var(--slot-size);
+}
+
+.text-inv {
+  color: var(--text-color-primary);
+  font-size: var(--text-large);
+  justify-content: center;
+  text-align: center;
+}
+
+.text-inv2 {
+  margin: -13px 16px;
+  color: var(--text-color-primary);
+  font-size: var(--text-large);
+}
+
+/* Slot */
+.slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: var(--slot-bg);
+  width: var(--slot-size);
+  height: var(--slot-size);
+  position: relative;
+  border-top: var(--inner-border-size) solid var(--inner-shadow-dark);
+  border-left: var(--inner-border-size) solid var(--inner-shadow-dark);
+  border-bottom: var(--inner-border-size) solid var(--inner-shadow-light);
+  border-right: var(--inner-border-size) solid var(--inner-shadow-light);
+}
+
+.slot:hover {
+  background-color: var(--slot-hover-bg);
+}
+
+.slot-soltar {
+  color: transparent;
+}
+
+.slot-soltar.preenchido {
+  font-weight: bold;
+}
+
+.slot-soltar:hover {
+  border-color: #007bff;
+  background-color: #c0c0c0;
+}
+
+.ui-draggable-dragging {
+  z-index: 1;
 }

@@ -1,36 +1,3 @@
-@font-face {
-  font-family: "pixel";
-  src: url(../assets/pixel-font.ttf);
-  font-weight: bold;
-}
-
-:root {
-  --transition-duration-short: 0.3s;
-  --transition-duration-medium: 0.5s;
-  --hover-scale-factor: 1.05;
-  --active-scale-factor: 0.98;
-  --focus-outline-color: #007bff;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html,
-body {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  font-family: pixel;
-  background-color: #000;
-  color: #fff;
-}
-
-/* Utilitários */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -41,34 +8,6 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-.fade-in {
-  animation: fadeIn var(--transition-duration-short) ease-in-out forwards;
-}
-
-.fade-out {
-  animation: fadeOut var(--transition-duration-short) ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
 }
 
 .video-element {
@@ -119,6 +58,32 @@ body {
   gap: 1.5rem;
 }
 
+.game-plaque {
+  width: 200px;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  transition: filter var(--transition-duration-short) ease-in-out;
+}
+
+.game-option:hover .game-plaque {
+  filter: brightness(1.2);
+}
+
+.loading-screen {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: pixel;
+  background-color: #000;
+  color: #fff;
+}
+
+.game-option {
+  transition: transform var(--transition-duration-short) ease-in-out,
+    box-shadow var(--transition-duration-short) ease-in-out;
+}
+
 .game-option:hover {
   transform: scale(var(--hover-scale-factor));
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
@@ -134,25 +99,12 @@ body {
   transform: scale(var(--active-scale-factor));
 }
 
-.game-plaque {
-  width: 200px;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-  transition: filter var(--transition-duration-short) ease-in-out;
-}
-
-.game-option:hover .game-plaque {
-  filter: brightness(1.2);
-}
-
 .skip-button {
   position: absolute;
   bottom: 2rem;
   left: 50%;
   transform: translateX(50%);
   z-index: 15;
-  /* Acima de outros elementos na choice-screen */
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--transition-duration-short) ease-in-out,
@@ -162,38 +114,4 @@ body {
 .skip-button--visible {
   opacity: 1;
   visibility: visible;
-}
-
-@media (max-width: 768px) {
-  .choice-content {
-    gap: 2rem;
-    padding: 1.5rem;
-  }
-
-  .choice-options-list {
-    flex-direction: column;
-    gap: 2rem !important;
-  }
-
-  .game-plaque {
-    width: 180px;
-  }
-
-  .game-option:hover {
-    transform: scale(1.02);
-  }
-
-  .choice-prompt {
-    font-size: 1.25rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .game-plaque {
-    width: 150px;
-  }
-
-  .choice-content {
-    padding: 1rem;
-  }
 }

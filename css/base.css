@@ -2,9 +2,9 @@
 @import url("button.css");
 @import url("inventory.css");
 @import url("loading.css");
-@import url("responsive.css");
 @import url("silabas.css");
 @import url("tab.css");
+@import url("responsive.css");
 
 @font-face {
   font-family: "pixel";
@@ -44,6 +44,7 @@
   --text-medium: 22px;
   --text-small: 18px;
 }
+
 
 *,
 *::before,

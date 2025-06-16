@@ -10,9 +10,7 @@
   font-family: pixel;
   cursor: grab;
   border: 0.26rem solid rgba(0, 0, 0, 0.3);
-  box-shadow: 
-    inset 2px 2px 0 rgba(255, 255, 255, 0.3),
-    inset -2px -2px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.3), inset -2px -2px 0 rgba(0, 0, 0, 0.3);
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
   color: white;
   background-image: url(../assets/images/texture.png);
@@ -23,6 +21,11 @@
 
 .silaba:active {
   animation: jelly 960ms linear both;
+  cursor: grabbing;
+}
+
+.ui-draggable-dragging {
+  cursor: grabbing;
 }
 
 .silaba[data-type="B"],

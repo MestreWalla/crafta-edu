@@ -60,5 +60,5 @@ Utiliza blocos que representam números e operadores matemáticos (`+`, `-`, `*`
 ---
 
 <p align="center">
-  Feito com ❤️ para uma melhor aprendizado!
+  Feito com ❤️ para um melhor aprendizado!
 </p>
